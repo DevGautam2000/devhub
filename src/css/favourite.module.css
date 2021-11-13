@@ -1,0 +1,113 @@
+.favourite {
+  --shadow: 0 0 10px 1px #9b9a9a;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fields {
+  position: relative;
+  background: white;
+  width: 330px;
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 10px;
+  row-gap: 10px;
+  flex-direction: column;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.fields > .selected {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  height: 40px;
+  width: fit-content;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+}
+.selected > span {
+  font-size: 14px;
+  background: white;
+  width: 330px;
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+  padding: 10px 3px;
+  text-align: center;
+}
+.selected p {
+  margin-right: 10px;
+  padding: 5px 8px;
+  border-radius: 10px;
+  background: royalblue;
+  position: relative;
+  white-space: nowrap;
+  color: white;
+}
+
+.selected p span {
+  position: absolute;
+  top: -6px;
+  cursor: pointer;
+  left: -6px;
+  height: 15px;
+  width: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: royalblue;
+  border-radius: 50%;
+  background: white;
+}
+
+.fields > button {
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 2px 5px 3px #dfdede;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+}
+.fields > button:active {
+  transform: scale(0.98);
+}
+.submitBtn {
+  padding: 10px;
+  margin: 20px 0px;
+  width: 330px;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  font-size: 1rem;
+  background: linear-gradient(50deg, royalblue, rgb(37, 82, 216));
+  cursor: pointer;
+}
+.submitBtn:disabled {
+  background: #dfdede;
+  cursor: not-allowed;
+}
+.submitBtn:hover {
+  background: linear-gradient(50deg, #80ea80, #66cb66);
+}
+.submitBtn:disabled:hover {
+  background: #dfdede;
+}

@@ -1,173 +1,176 @@
-:root{
-    --footer-height:6vh;
-    --padding:10px 20px;
-    --button-size: 40px;
-    --border-rad: 10px;
-    --primary: royalblue;
+:root {
+  --footer-height: 6vh;
+  --padding: 10px 20px;
+  --button-size: 40px;
+  --border-rad: 10px;
+  --primary: royalblue;
 }
 
-
-
-.login{
-    min-height:calc(100vh - var(--footer-height)); 
-    width:100vw; 
-    display: flex;
-    justify-content:  center;
-    align-items: center;
-    background-color: royalblue;
-    
+.login {
+  height: calc(100vh - var(--footer-height));
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(50deg, #7190ed, #1f4cd2);
 }
 
-
-
-.form{
-    display: flex;
-    height: 400px;
-    width:350px;
-    animation: fadein 0.6s linear;
-    background:white;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: var(--padding);
-    font-size: 1.2rem;
-    box-shadow: 1px 1px 5px 1px rgb(81, 81, 81);
-    border-radius:var(--border-rad);
+.form {
+  display: flex;
+  height: 400px;
+  width: 350px;
+  animation: fadein 0.6s linear;
+  background: white;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: var(--padding);
+  font-size: 1.2rem;
+  box-shadow: 1px 1px 5px 1px rgb(81, 81, 81);
+  border-radius: var(--border-rad);
 }
 
-@keyframes fadein{
-    0%{
-        opacity: 0;
-    }
-    30%{
-        opacity: 0.3;
-    }
-    50%{
-        opacity: 0.5;
-    }
-    70%{
-        opacity: 0.7;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-
-.form > div{
-    display: flex;
-    flex-direction: column;
-}
-.form label{
-    margin-bottom: 10px;
-    font-size: 1rem;
-    color: gray;
-}
-
-.form input{
-    border-radius: var(--border-rad);
-    padding:2px 8px ;
-    height:var(--button-size);
-    border: 1px solid rgb(218, 213, 213);
-}
-
-.form input:focus{
-    outline:none;
-    border:none;
-    border-radius: 0;
-    border-bottom: 1px solid var(--primary);
-    transition: border 1s ease;
-}
-
-.login button{
-    background:var(--primary);
-    color: white;
-    border: none;
-    border-radius: var(--border-rad);
-    height:var(--button-size);
-    cursor: pointer;
-    
-}
-.login button:hover{
-    background-color:rgb(26, 72, 211);
-    color:white;
-}
-.login button:active{
-    transform: scale(0.98);
-}
-
-
-
-.circle{
-    position: absolute;
-    border-radius: 50%;
-    background: white;
-    animation: ripple 15s infinite;
-    box-shadow: 0px 0px 1px 0px #508fb9;
+@keyframes fadein {
+  0% {
+    opacity: 0;
   }
-  
-  .small{
-    width: 200px;
-    height: 200px;
-    top: -100px;
-    right: -100px;
+  30% {
+    opacity: 0.3;
   }
-  
-  .medium{
-    width: 400px;
-    height: 400px;
-    top: -200px;
-    right: -200px;
-  }
-  
-  .large{
-    width: 600px;
-    height: 600px;
-    left: -300px;
-    bottom: -300px;
-  }
-  
-  .xlarge{
-    width: 800px;
-    height: 800px;
-    left: -400px;
-    bottom: -400px;
-  }
-  
-  .xxlarge{
-    width: 1000px;
-    height: 1000px;
-    left: -500px;
-    bottom: -500px;
-  }
-  
-  .shade1{
-    opacity: 0.2;
-  }
-  .shade2{
+  50% {
     opacity: 0.5;
   }
-  
-  .shade3{
+  70% {
     opacity: 0.7;
   }
-  
-  .shade4{
-    opacity: 0.4;
+  100% {
+    opacity: 1;
   }
-  
-  .shade5{
-    opacity: 0.6;
+}
+
+.form > div {
+  display: flex;
+  flex-direction: column;
+}
+.form label {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: gray;
+}
+
+.form input {
+  border-radius: var(--border-rad);
+  padding: 2px 8px;
+  height: var(--button-size);
+  border: 1px solid rgb(218, 213, 213);
+}
+
+.form input:focus {
+  outline: none;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--primary);
+  transition: border 1s ease;
+}
+
+.login button {
+  background: linear-gradient(90deg, #7190ed, #1f4cd2);
+  color: white;
+  border: none;
+  border-radius: var(--border-rad);
+  height: var(--button-size);
+  cursor: pointer;
+}
+.login button:hover {
+  background: #1a48d3;
+  color: white;
+}
+.login button:active {
+  transform: scale(0.98);
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  display: hidden;
+  background: white;
+  animation: ripple 15s infinite;
+  box-shadow: 0px 0px 1px 0px #508fb9;
+}
+
+.small {
+  width: 200px;
+  height: 200px;
+  top: -100px;
+  right: -100px;
+}
+
+.medium {
+  width: 400px;
+  height: 400px;
+  top: -200px;
+  right: -200px;
+}
+
+.large {
+  width: 600px;
+  height: 600px;
+  left: -300px;
+  bottom: -300px;
+}
+
+.xlarge {
+  width: 800px;
+  height: 800px;
+  left: -400px;
+  bottom: -400px;
+}
+
+.xxlarge {
+  width: 1000px;
+  height: 1000px;
+  left: -500px;
+  bottom: -500px;
+}
+
+.shade1 {
+  opacity: 0.2;
+}
+.shade2 {
+  opacity: 0.5;
+}
+
+.shade3 {
+  opacity: 0.7;
+}
+
+.shade4 {
+  opacity: 0.4;
+}
+
+.shade5 {
+  opacity: 0.6;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
   }
-  
-  @keyframes ripple{
-    0%{
-      transform: scale(0.8);
-    }
-    
-    50%{
-      transform: scale(1.2);
-    }
-    
-    100%{
-      transform: scale(0.8);
-    }
+
+  50% {
+    transform: scale(1.2);
   }
+
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .circle {
+    display: none;
+  }
+
+  .form {
+    transform: scale(0.9);
+  }
+}
