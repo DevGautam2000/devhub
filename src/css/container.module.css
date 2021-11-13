@@ -282,6 +282,10 @@
 .send button:active {
   transform: scale(0.98);
 }
+.send button:disabled {
+  background: #c4c3c3;
+  cursor: not-allowed;
+}
 
 .add {
   position: absolute;

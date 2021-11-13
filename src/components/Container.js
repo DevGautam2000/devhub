@@ -67,7 +67,11 @@ function Container() {
               </form>
             </div>
             <div className={st.send}>
-              <button type="submit" onClick={submit}>
+              <button
+                type="submit"
+                onClick={submit}
+                disabled={message.length === 0 ? true : false}
+              >
                 <i className="fas fa-paper-plane"></i>
               </button>
             </div>
