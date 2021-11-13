@@ -1,0 +1,25 @@
+.right {
+  padding: 2rem;
+  padding-top: 10vh;
+  flex: 1;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.right > * {
+  width: 70%;
+  margin: 0 auto;
+}
+.box {
+  box-shadow: 0px 0px 10px #eee;
+  padding: 20px 18px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  color: royalblue;
+  font-weight: bold;
+}
+.box > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

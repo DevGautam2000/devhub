@@ -1,0 +1,92 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+.navbarMain {
+  position: fixed;
+  width: 100vw;
+  background: royalblue;
+  /* color: rgb(231, 105, 31); */
+  height: 7vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 60;
+  padding: 5px 20px;
+  box-shadow: 0px 0px 20px rgb(36, 36, 36);
+}
+
+.navbarText > p > span {
+  font-family: "Poppins", "Cedarville Cursive", sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: linear-gradient(
+    270.97deg,
+    #f4f1f1 -2.45%,
+    #a7a5a6 26.84%,
+    #202020 4.15%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.navbarText {
+  text-align: center;
+}
+.navbarbtns button {
+  margin-left: 10px;
+  border: 0;
+  background: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+.navbarbtns i {
+  color: white;
+  font-size: 1.6rem;
+  transition: all 0.3s ease-in-out;
+}
+.navbarbtns button:nth-of-type(1):hover > i {
+  background: linear-gradient(
+    270.97deg,
+    #ff7571 -2.45%,
+    #ea5dad 26.84%,
+    #fda9a0 64.15%,
+    #ed3bf0 108.29%,
+    #b2f4b6 159.03%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.navbarbtns button:nth-of-type(2):hover > i {
+  background: linear-gradient(
+    270.97deg,
+    #71f8ff -2.45%,
+    #5d91ea 26.84%,
+    #2d23e8 64.15%,
+    #3bf0e4 108.29%,
+    #b2f4b6 159.03%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tooltip {
+  position: absolute;
+  padding: 5px 10px;
+  font-size: 10px;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.8);
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.navbarbtns button:hover {
+  overflow: visible;
+  background: #eee;
+}

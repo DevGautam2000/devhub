@@ -1,0 +1,47 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,700,700italic);
+
+.posts {
+  width: 100%;
+  background: white;
+  padding: 25px 30px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px #eee;
+}
+.posts > * {
+  font-family: "Ubuntu";
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.tag {
+  font-size: 8px;
+  background: rgb(239, 237, 237);
+  padding: 3px 5px;
+  border-radius: 3px;
+  color: white;
+}
+
+.time {
+  font-size: 12px;
+  color: grey;
+}
+.heading {
+  color: royalblue;
+  font-size: 1.3rem;
+  font-weight: bold;
+  flex: 0.7;
+}
+.heading:hover {
+  color: blue;
+}
+
+main p {
+  color: grey;
+  margin-bottom: 20px;
+}

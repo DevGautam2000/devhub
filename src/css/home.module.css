@@ -1,0 +1,14 @@
+.home {
+  min-height: calc(100vh - 6vh);
+  width: 100vw;
+  position: relative;
+  display: flex;
+}
+
+.home .right {
+  padding: 3rem;
+  padding-top: 10vh;
+  height: 100vh;
+  flex: 1;
+  overflow-y: scroll;
+}
