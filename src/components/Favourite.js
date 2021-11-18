@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAppContext } from "../context/Context";
 import st from "../css/favourite.module.css";
+import { auth } from "../firebase/firebase";
 import { keys } from "../utils/keys";
 
 function Favourite({ setIsVisible }) {
@@ -44,7 +45,10 @@ function Favourite({ setIsVisible }) {
       <div className={st.fields}>
         <div className={st.selected}>
           {selectedFields.length === 0 ? (
-            <span>Select areas of interest</span>
+            <span>
+              Hi! {auth?.currentUser?.displayName?.split(" ")[0]} select your
+              interest
+            </span>
           ) : null}
           {selectedFields.map((item) => (
             <p key={item}>

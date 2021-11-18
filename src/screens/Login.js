@@ -1,10 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Footer from "../components/Footer";
 import st from "../css/login.module.css";
+import { auth } from "../firebase/firebase";
+import { useAppContext } from "../context/Context";
+
 function Login() {
   const [username, setusername] = useState("");
   const [password, setpassword] = useState("");
+  const { setAlert } = useAppContext();
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        history.replace("/");
+      }
+    });
+
+    return unsubscribe;
+    // eslint-disable-next-line
+  }, []);
+
+  const cleanInputs = () => {
+    setusername("");
+    setpassword("");
+  };
+  const login = (e) => {
+    e.preventDefault();
+
+    auth
+      .signInWithEmailAndPassword(username, password)
+      .catch((err) => setAlert(() => ({ isVisible: true, msg: err.message })));
+    cleanInputs();
+  };
+
   const history = useHistory();
   return (
     <>
@@ -36,9 +65,10 @@ function Login() {
               onChange={(e) => setpassword(e.target.value)}
             />
           </div>
-          <button>Sign in</button>
+          <button onClick={login}>Sign in</button>
           <div>
             <button
+              data-testid="register"
               onClick={() => {
                 history.push("/register");
               }}

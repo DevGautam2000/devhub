@@ -97,7 +97,7 @@
   flex-direction: column;
   height: 100vh;
   overflow-y: scroll;
-  flex: 0.4;
+  flex: 0.5;
 }
 .right .viewer {
   flex: 1;
@@ -140,6 +140,10 @@
   border: none;
   background: #d1d0d0;
   color: white;
+  overflow: hidden;
+}
+.chat button img {
+  object-fit: cover;
 }
 .chat .info {
   flex: 1;
@@ -181,7 +185,11 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
+  overflow: hidden;
   border: 0;
+}
+.toolbar button img {
+  object-fit: cover;
 }
 .toolbar > div {
   display: flex;
