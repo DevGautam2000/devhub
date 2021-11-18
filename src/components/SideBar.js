@@ -33,7 +33,7 @@ function SideBar() {
   const navs = [
     { i: "fas fa-home", n: "Home", r: "/" },
     { i: "fas fa-comment-alt", n: "Chats", r: "chats" },
-    { i: "fas fa-users", n: "Users", r: "users" },
+    { i: "fab fa-hubspot", n: "Rooms", r: "rooms" },
     { i: "fas fa-user-edit", n: "User Settings", r: "settings" },
   ];
 

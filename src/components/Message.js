@@ -1,14 +1,15 @@
 import React from "react";
 import st from "../css/container.module.css";
+import { auth } from "../firebase/firebase";
 
-function Message({ msg, tag, time }) {
-  return tag === "user" ? (
+function Message({ msg, tag, name }) {
+  return tag === auth?.currentUser?.uid ? (
     <div className={st.user}>
-      {msg} <span>{time}</span>
+      {msg} <span>{name}</span>
     </div>
   ) : (
     <div className={st.sender}>
-      {msg} <span>{time}</span>
+      {msg} <span>{name}</span>
     </div>
   );
 }

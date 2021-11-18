@@ -1,24 +1,7 @@
 import React from "react";
 import Post from "../Post";
+import { mdList } from "../../utils/data";
 function Mobile_Dev() {
-  const mdList = [
-    {
-      heading: "Chitti the mobile developer",
-      time: "9:00 pm",
-      content:
-        "this is a robo who steals asswarya rai  from rajnikant Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti possimus tenetur veritatis maiores laboriosam, voluptates mollitia dolorem accusamus fuga dolore." +
-        "this is a robo who steals asswarya rai  from rajnikant Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti possimus tenetur veritatis maiores laboriosam, voluptates mollitia dolorem accusamus fuga dolore." +
-        "this is a robo who steals asswarya rai  from rajnikant Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti possimus tenetur veritatis maiores laboriosam, voluptates mollitia dolorem accusamus fuga dolore." +
-        "this is a robo who steals asswarya rai  from rajnikant Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti possimus tenetur veritatis maiores laboriosam, voluptates mollitia dolorem accusamus fuga dolore." +
-        "this is a robo who steals asswarya rai  from rajnikant Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti possimus tenetur veritatis maiores laboriosam, voluptates mollitia dolorem accusamus fuga dolore." +
-        "this is a robo who steals asswarya rai  from rajnikant Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti possimus tenetur veritatis maiores laboriosam, voluptates mollitia dolorem accusamus fuga dolore." +
-        "this is a robo who steals asswarya rai  from rajnikant Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti possimus tenetur veritatis maiores laboriosam, voluptates mollitia dolorem accusamus fuga dolore." +
-        "this is a robo who steals asswarya rai  from rajnikant Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti possimus tenetur veritatis maiores laboriosam, voluptates mollitia dolorem accusamus fuga dolore." +
-        "this is a robo who steals asswarya rai  from rajnikant Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti possimus tenetur veritatis maiores laboriosam, voluptates mollitia dolorem accusamus fuga dolore." +
-        "this is a robo who steals asswarya rai  from rajnikant Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti possimus tenetur veritatis maiores laboriosam, voluptates mollitia dolorem accusamus fuga dolore." +
-        "this is a robo who steals asswarya rai  from rajnikant Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti possimus tenetur veritatis maiores laboriosam, voluptates mollitia dolorem accusamus fuga dolore.",
-    },
-  ];
   return (
     <div>
       {mdList.map((post, index) => (

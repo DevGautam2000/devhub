@@ -1,12 +1,48 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
 import Footer from "../components/Footer";
 import st from "../css/login.module.css";
+import { auth } from "../firebase/firebase";
+import { useHistory } from "react-router-dom";
+import { useAppContext } from "../context/Context";
+
 function Login() {
   const history = useHistory();
+  const [name, setname] = useState("");
   const [username, setusername] = useState("");
   const [confirmPassword, setconfirmPassword] = useState("");
   const [password, setpassword] = useState("");
+  const { setAlert } = useAppContext();
+
+  const cleanInputs = () => {
+    setusername("");
+    setpassword("");
+    setconfirmPassword("");
+  };
+
+  const register = (e) => {
+    e.preventDefault();
+    if (password === confirmPassword) {
+      auth
+        .createUserWithEmailAndPassword(username, password)
+        .then((authUser) => {
+          authUser.user
+            .updateProfile({
+              displayName: name,
+              pass: password,
+            })
+            .then(() => {
+              setAlert(() => ({ isVisible: true, msg: "User id registered." }));
+              cleanInputs();
+              history.replace("/");
+            });
+        })
+        .catch((err) =>
+          setAlert(() => ({ isVisible: true, msg: err.message }))
+        );
+    } else {
+      setAlert(() => ({ isVisible: true, msg: "Passwords do not match." }));
+    }
+  };
 
   return (
     <>
@@ -19,20 +55,31 @@ function Login() {
           <div className={`${st.circle} ${st.small} ${st.shade5}`}></div>
         </div>
 
-        <div className={st.form} style={{ height: "500px" }}>
+        <div className={st.form} style={{ height: "580px" }}>
+          <div>
+            <label htmlFor="name">Name</label>
+            <input
+              id="name"
+              type="text"
+              required
+              value={name}
+              onChange={(e) => setname(e.target.value)}
+            />
+          </div>
           <div>
             <label htmlFor="username">Username</label>
             <input
               id="username"
               type="email"
               value={username}
+              required
               onChange={(e) => setusername(e.target.value)}
             />
           </div>
           <div>
             <label htmlFor="Password">Password</label>
             <input
-              id="Password"
+              id="password"
               type="password"
               value={password}
               onChange={(e) => setpassword(e.target.value)}
@@ -41,13 +88,15 @@ function Login() {
           <div>
             <label htmlFor="Confirm_Password">Confirm Password</label>
             <input
-              id="Confirm_Password"
+              id="confirm-password"
               type="password"
               value={confirmPassword}
               onChange={(e) => setconfirmPassword(e.target.value)}
             />
           </div>
-          <button>Sign up</button>
+          <button id="sign-up" onClick={register}>
+            Sign up
+          </button>
           <div>
             <button
               onClick={() => {
