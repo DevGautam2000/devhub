@@ -18,10 +18,13 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   color: white;
   background: linear-gradient(50deg, #7190ed, #1f4cd2);
 }
-
+footer small {
+  font-size: 0.5rem;
+}
 body,
 html {
   overflow: hidden;
