@@ -1,0 +1,42 @@
+.card {
+  height: fit-content;
+  box-shadow: 0 0 10px #eee;
+  border-radius: 10px;
+  padding: 20px 10px;
+}
+
+.card .avatar {
+  max-width: 200px;
+  max-height: 200px;
+  overflow: hidden;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  box-shadow: 0 0 10px #eee;
+}
+.avatar img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+.links {
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.links i {
+  font-size: 1.3rem;
+  color: royalblue;
+  margin-right: 10px;
+}
+.links i:hover {
+  color: grey;
+}
+
+.info {
+  margin-top: 10px;
+}
+.info article {
+  font-size: 14px;
+  margin-top: 2px;
+  margin-bottom: 10px;
+}

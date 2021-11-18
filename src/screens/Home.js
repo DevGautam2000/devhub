@@ -9,17 +9,20 @@ import WebDev from "../components/Fields/WebDev";
 import MobileDev from "../components/Fields/Mobile_Dev";
 import CyberSecurity from "../components/Fields/CyberSecurity";
 import { keys } from "../utils/keys";
+import { auth, storage } from "../firebase/firebase";
 
 function Home() {
   const [isVisible, setIsVisible] = useState(true);
-  const { favourites, setFavourites } = useAppContext();
+  const { favourites, setFavourites, setImageAsUrl } = useAppContext();
 
   useEffect(() => {
     const effect = () => {
       const favs = JSON.parse(localStorage.getItem("fav_fields"));
-      setFavourites(() => favs);
 
-      if (favourites?.length === 0 && favs?.length === 0) {
+      if (favs) setFavourites(() => favs);
+      else setFavourites(() => []);
+
+      if (favourites?.length === 0 && (!favs || favs?.length === 0)) {
         localStorage.setItem("devhub_modal", "true");
         setIsVisible(() => true);
       }
@@ -34,6 +37,44 @@ function Home() {
     return JSON.parse(isLocalVisible);
   };
 
+  useEffect(() => {
+    let url = "";
+    const effect = () => {
+      auth.onAuthStateChanged((authUser) => {
+        if (authUser) {
+          url = `images/${auth?.currentUser.uid}/`;
+          getImage();
+        }
+      });
+    };
+
+    const setImage = (uri) => {
+      storage.ref(`${uri}`).getDownloadURL().then(onResolve, onReject);
+
+      function onResolve(uri) {
+        setImageAsUrl(() => ({
+          imgUrl: uri,
+        }));
+      }
+      function onReject(error) {
+        //fill not found
+      }
+    };
+    const getImage = () => {
+      storage
+        .ref()
+        .child(`images/${auth?.currentUser.uid}/`)
+        .listAll()
+        .then((img) => {
+          url = `${img?.items?.at(-1)?._delegate?._location.path_.toString()}`;
+          if (url !== "undefined") setImage(url);
+        })
+        .catch((err) => {});
+    };
+
+    return effect();
+    // eslint-disable-next-line
+  }, []);
   return (
     <>
       <Navbar />

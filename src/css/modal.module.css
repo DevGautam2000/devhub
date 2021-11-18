@@ -1,0 +1,70 @@
+.modal {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background: #000000cc;
+  z-index: 120;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal .box {
+  position: relative;
+  bottom: 5vh;
+  height: 260px;
+  width: 350px;
+  background: white;
+  padding: 35px 30px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.box .text {
+  color: #f4b20a;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.box p {
+  color: grey;
+  font-size: 1rem;
+  text-align: center;
+}
+.box div {
+  text-align: right;
+}
+
+.box button {
+  height: 30px;
+  padding: 5px 20px;
+  border: 0;
+  background: royalblue;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 0 10px #eee;
+}
+.box button:hover {
+  box-shadow: 0 0 5px rgb(205, 203, 203);
+}
+.box button:active {
+  transform: scale(0.98);
+}
+
+.ripple {
+  /* position: absolute; */
+  background-position: center;
+  transition: background 1s ease-out;
+}
+.ripple:hover {
+  background: royalblue radial-gradient(circle, transparent 1%, royalblue 1%)
+    center/15000%;
+}
+.ripple:active {
+  background-color: white;
+  background-size: 100%;
+  transition: background 0s;
+}
